@@ -1,0 +1,57 @@
+._modalWindow, ._modalOverlay{
+    opacity: 0;
+    z-index: -1;
+  }
+  ._modal.hide ._modalOverlay,
+  ._modal.hide ._modalWindow{
+    opacity: 1;
+    z-index: 1999;
+  }
+  ._modal.open ._modalOverlay,
+  ._modal.open ._modalWindow{
+    opacity: 1;
+    z-index: 1999;
+  }
+  ._modal.open ._modalOverlay{
+    background: rgba(0,0,0,.5);
+  }
+  ._modal.open ._modalWindow{
+    transform: translateY(0);
+  }
+  ._modal.hide ._modalOverlay{
+    background: rgba(0,0,0,0);
+  }
+  ._modal.hide ._modalWindow{
+    transform: translateY(-300%);
+  }
+  
+  ._modalOverlay{
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0,0,0,0);
+    transition: background .2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  ._modalWindow{
+    box-sizing: border-box;
+    width: 600px;
+    border-radius: 5px;
+    background: #fff;
+    padding: 15px;
+    margin: 0 auto;
+    transition: transform .2s;
+    transform: translateY(-300%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  ._modalClose{
+  
+    background: transparent;
+    cursor: pointer;
+  }
